@@ -181,3 +181,5 @@ class AnimateTransform(Animate):
         """
         super(AnimateTransform, self).__init__(element, **extra)
         self['type'] = transform
+        # for svg2.0?
+        self.attribs.update({"attributeName": "transform"})

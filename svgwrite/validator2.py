@@ -75,7 +75,7 @@ class Tiny12Validator(object):
                 return
         # check if 'value' is a valid constant
         valuestr = str(value)
-        # support svg2.0
+        # support svg2.0 is not a valid
         # see https://stackoverflow.com/questions/65643424/python-svgwrite-drawing-error-not-a-valid-value-for-attribute-d-at-svg-elemen
         if str(elementname) == "path":
             return
