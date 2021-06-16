@@ -77,10 +77,10 @@ class Tiny12Validator(object):
         valuestr = str(value)
         # support svg2.0 is not a valid
         # see https://stackoverflow.com/questions/65643424/python-svgwrite-drawing-error-not-a-valid-value-for-attribute-d-at-svg-elemen
-        # if str(elementname) == "path":
-        #     return
-        # if not valuestr in attribute.get_const(elementname):
-        #     raise TypeError("'%s' is not a valid value for attribute '%s' at svg-element <%s>." % (value, attributename, elementname))
+        if str(elementname) == "path" or str(elementname) == "animateTransform":
+            return
+        if not valuestr in attribute.get_const(elementname):
+            raise TypeError("'%s' is not a valid value for attribute '%s' at svg-element <%s>." % (value, attributename, elementname))
 
     def _check_valid_svg_attribute_name(self, elementname, attributename):
         """ Check if 'attributename' is a valid svg-attribute for svg-element
